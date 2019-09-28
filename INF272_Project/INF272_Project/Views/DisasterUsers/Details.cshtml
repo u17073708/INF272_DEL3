@@ -1,0 +1,50 @@
+﻿@model INF272_Project.Models.DisasterUser
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DisasterUser</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DisasterUserDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DisasterUserDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Urgency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Urgency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AppUser.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppUser.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Disaster.ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Disaster.ID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

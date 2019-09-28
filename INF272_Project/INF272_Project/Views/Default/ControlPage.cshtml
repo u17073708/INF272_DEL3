@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "ControlPage";
+}
+
+<h2>ControlPage</h2>
+<label>This page is for a admin to edit everything</label>
+<br />
+<input type="button"
+       value="Allergies"
+       onclick="location.href='@Url.Action("Index", "Allergies")'" />
+
+<br />
+<input type="button"
+       value="Provinces"
+       onclick="location.href='@Url.Action("Index", "Provinces")'" />
+
+<br />
+<input type="button"
+       value="Cities"
+       onclick="location.href='@Url.Action("Index", "Cities")'" />
+
+<br />
+<input type="button"
+       value="Disabilities"
+       onclick="location.href='@Url.Action("Index", "Disabilities")'" />
+
+<br />
+<input type="button"
+       value="Disaster types"
+       onclick="location.href='@Url.Action("Index", "DisasterTypes")'" />
+
+<br />
+<input type="button"
+       value="Emergency services"
+       onclick="location.href='@Url.Action("Index", "EmergencyServices")'" />
+
+<br />
+<input type="button"
+       value="Help types"
+       onclick="location.href='@Url.Action("Index", "Helps")'" />
+
+<br />
+<input type="button"
+       value="Skills"
+       onclick="location.href='@Url.Action("Index", "Skills")'" />
+
+<br />
+<input type="button"
+       value="Go back to control page"
+       onclick="location.href='@Url.Action("Index", "SafeLocations")'" />
+
+<br />
+<br />
+<input type="button"
+       value="Go back"
+       onclick="location.href='@Url.Action("Index", "Default")'" />
+

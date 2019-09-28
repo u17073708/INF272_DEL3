@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Allergy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Allergy" Type="varchar" MaxLength="50" />
+    <Property Name="AllergyDescription" Type="varchar" MaxLength="50" />
+    <Property Name="Remedy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AllergyUser">
+    <Key>
+      <PropertyRef Name="AllergyID" />
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="AllergyID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="Precautions" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AppUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Surname" Type="varchar" MaxLength="50" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="IDNumber" Type="int" />
+    <Property Name="EmailAddress" Type="varchar" MaxLength="50" />
+    <Property Name="EmergencyContactID" Type="int" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Population" Type="varchar" MaxLength="50" />
+    <Property Name="Size" Type="int" />
+    <Property Name="Risk" Type="int" />
+    <Property Name="ProvinceID" Type="int" />
+  </EntityType>
+  <EntityType Name="Disability">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Disability" Type="varchar" MaxLength="50" />
+    <Property Name="DisabilityDescription" Type="varchar" MaxLength="50" />
+    <Property Name="Remedies" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DisabilityUser">
+    <Key>
+      <PropertyRef Name="DisabilityID" />
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="DisabilityID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="Precautions" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Disaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DisasterDate" Type="datetime" />
+    <Property Name="DamageLevel" Type="int" />
+    <Property Name="Casualties" Type="int" />
+    <Property Name="DisasterID" Type="int" />
+    <Property Name="CityID" Type="int" />
+  </EntityType>
+  <EntityType Name="DisasterType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Destructiveness" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DisasterUser">
+    <Key>
+      <PropertyRef Name="DisasterID" />
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="DisasterID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="DisasterUserDate" Type="datetime" />
+    <Property Name="Urgency" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EmergencyContact">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Surname" Type="varchar" MaxLength="50" />
+    <Property Name="CellNum" Type="int" />
+  </EntityType>
+  <EntityType Name="EmergencyContactUser">
+    <Key>
+      <PropertyRef Name="EmergencyContactID" />
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="EmergencyContactID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="Precautions" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EmergencyServices">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Number" Type="int" />
+  </EntityType>
+  <EntityType Name="Help">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Help" Type="varchar" MaxLength="50" />
+    <Property Name="HelpDescription" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="HelpUser">
+    <Key>
+      <PropertyRef Name="HelpID" />
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="HelpID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="HelpUserDate" Type="datetime" />
+    <Property Name="DisasterID" Type="int" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Size" Type="int" />
+    <Property Name="Population" Type="int" />
+  </EntityType>
+  <EntityType Name="SafeLocation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Coordinates" Type="varchar" MaxLength="50" />
+    <Property Name="CityID" Type="int" />
+  </EntityType>
+  <EntityType Name="Skill">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Skill" Type="varchar" MaxLength="50" />
+    <Property Name="Difficulty" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="UserSkill">
+    <Key>
+      <PropertyRef Name="SkillID" />
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="SkillID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="ExperienceLevel" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__City__ProvinceID__4AB81AF0">
+    <End Role="Province" Type="Self.Province" Multiplicity="0..1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Province">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="ProvinceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Disaster__CityID__4E88ABD4">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Disaster" Type="Self.Disaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Disaster">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Disaster__Disast__45F365D3">
+    <End Role="DisasterType" Type="Self.DisasterType" Multiplicity="0..1" />
+    <End Role="Disaster" Type="Self.Disaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DisasterType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Disaster">
+        <PropertyRef Name="DisasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HelpUser__Disast__4316F928">
+    <End Role="Disaster" Type="Self.Disaster" Multiplicity="0..1" />
+    <End Role="HelpUser" Type="Self.HelpUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HelpUser">
+        <PropertyRef Name="DisasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SafeLocat__CityI__4D94879B">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="SafeLocation" Type="Self.SafeLocation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SafeLocation">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_allergyID">
+    <End Role="Allergy" Type="Self.Allergy" Multiplicity="1" />
+    <End Role="AllergyUser" Type="Self.AllergyUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Allergy">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AllergyUser">
+        <PropertyRef Name="AllergyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_allergyUserID">
+    <End Role="AppUser" Type="Self.AppUser" Multiplicity="1" />
+    <End Role="AllergyUser" Type="Self.AllergyUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AppUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AllergyUser">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_disabilityID">
+    <End Role="Disability" Type="Self.Disability" Multiplicity="1" />
+    <End Role="DisabilityUser" Type="Self.DisabilityUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disability">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DisabilityUser">
+        <PropertyRef Name="DisabilityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_disabilityUserID">
+    <End Role="AppUser" Type="Self.AppUser" Multiplicity="1" />
+    <End Role="DisabilityUser" Type="Self.DisabilityUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AppUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DisabilityUser">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_disasterID">
+    <End Role="Disaster" Type="Self.Disaster" Multiplicity="1" />
+    <End Role="DisasterUser" Type="Self.DisasterUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DisasterUser">
+        <PropertyRef Name="DisasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_disasterUserID">
+    <End Role="AppUser" Type="Self.AppUser" Multiplicity="1" />
+    <End Role="DisasterUser" Type="Self.DisasterUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AppUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DisasterUser">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_emergencyContactID">
+    <End Role="EmergencyContact" Type="Self.EmergencyContact" Multiplicity="1" />
+    <End Role="EmergencyContactUser" Type="Self.EmergencyContactUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmergencyContact">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EmergencyContactUser">
+        <PropertyRef Name="EmergencyContactID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_emergencyContactUserID">
+    <End Role="AppUser" Type="Self.AppUser" Multiplicity="1" />
+    <End Role="EmergencyContactUser" Type="Self.EmergencyContactUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AppUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EmergencyContactUser">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_helpID">
+    <End Role="Help" Type="Self.Help" Multiplicity="1" />
+    <End Role="HelpUser" Type="Self.HelpUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Help">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HelpUser">
+        <PropertyRef Name="HelpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_helpUserID">
+    <End Role="AppUser" Type="Self.AppUser" Multiplicity="1" />
+    <End Role="HelpUser" Type="Self.HelpUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AppUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HelpUser">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_skillID">
+    <End Role="Skill" Type="Self.Skill" Multiplicity="1" />
+    <End Role="UserSkill" Type="Self.UserSkill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skill">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserSkill">
+        <PropertyRef Name="SkillID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_userID">
+    <End Role="AppUser" Type="Self.AppUser" Multiplicity="1" />
+    <End Role="UserSkill" Type="Self.UserSkill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AppUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserSkill">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="Allergy" EntityType="Self.Allergy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AllergyUser" EntityType="Self.AllergyUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AppUser" EntityType="Self.AppUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Disability" EntityType="Self.Disability" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DisabilityUser" EntityType="Self.DisabilityUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Disaster" EntityType="Self.Disaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DisasterType" EntityType="Self.DisasterType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DisasterUser" EntityType="Self.DisasterUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmergencyContact" EntityType="Self.EmergencyContact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmergencyContactUser" EntityType="Self.EmergencyContactUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmergencyServices" EntityType="Self.EmergencyServices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Help" EntityType="Self.Help" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HelpUser" EntityType="Self.HelpUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Province" EntityType="Self.Province" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SafeLocation" EntityType="Self.SafeLocation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Skill" EntityType="Self.Skill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserSkill" EntityType="Self.UserSkill" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__City__ProvinceID__4AB81AF0" Association="Self.FK__City__ProvinceID__4AB81AF0">
+      <End Role="Province" EntitySet="Province" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Disaster__CityID__4E88ABD4" Association="Self.FK__Disaster__CityID__4E88ABD4">
+      <End Role="City" EntitySet="City" />
+      <End Role="Disaster" EntitySet="Disaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Disaster__Disast__45F365D3" Association="Self.FK__Disaster__Disast__45F365D3">
+      <End Role="DisasterType" EntitySet="DisasterType" />
+      <End Role="Disaster" EntitySet="Disaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HelpUser__Disast__4316F928" Association="Self.FK__HelpUser__Disast__4316F928">
+      <End Role="Disaster" EntitySet="Disaster" />
+      <End Role="HelpUser" EntitySet="HelpUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SafeLocat__CityI__4D94879B" Association="Self.FK__SafeLocat__CityI__4D94879B">
+      <End Role="City" EntitySet="City" />
+      <End Role="SafeLocation" EntitySet="SafeLocation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_allergyID" Association="Self.FK_allergyID">
+      <End Role="Allergy" EntitySet="Allergy" />
+      <End Role="AllergyUser" EntitySet="AllergyUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_allergyUserID" Association="Self.FK_allergyUserID">
+      <End Role="AppUser" EntitySet="AppUser" />
+      <End Role="AllergyUser" EntitySet="AllergyUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_disabilityID" Association="Self.FK_disabilityID">
+      <End Role="Disability" EntitySet="Disability" />
+      <End Role="DisabilityUser" EntitySet="DisabilityUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_disabilityUserID" Association="Self.FK_disabilityUserID">
+      <End Role="AppUser" EntitySet="AppUser" />
+      <End Role="DisabilityUser" EntitySet="DisabilityUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_disasterID" Association="Self.FK_disasterID">
+      <End Role="Disaster" EntitySet="Disaster" />
+      <End Role="DisasterUser" EntitySet="DisasterUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_disasterUserID" Association="Self.FK_disasterUserID">
+      <End Role="AppUser" EntitySet="AppUser" />
+      <End Role="DisasterUser" EntitySet="DisasterUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_emergencyContactID" Association="Self.FK_emergencyContactID">
+      <End Role="EmergencyContact" EntitySet="EmergencyContact" />
+      <End Role="EmergencyContactUser" EntitySet="EmergencyContactUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_emergencyContactUserID" Association="Self.FK_emergencyContactUserID">
+      <End Role="AppUser" EntitySet="AppUser" />
+      <End Role="EmergencyContactUser" EntitySet="EmergencyContactUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_helpID" Association="Self.FK_helpID">
+      <End Role="Help" EntitySet="Help" />
+      <End Role="HelpUser" EntitySet="HelpUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_helpUserID" Association="Self.FK_helpUserID">
+      <End Role="AppUser" EntitySet="AppUser" />
+      <End Role="HelpUser" EntitySet="HelpUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_skillID" Association="Self.FK_skillID">
+      <End Role="Skill" EntitySet="Skill" />
+      <End Role="UserSkill" EntitySet="UserSkill" />
+    </AssociationSet>
+    <AssociationSet Name="FK_userID" Association="Self.FK_userID">
+      <End Role="AppUser" EntitySet="AppUser" />
+      <End Role="UserSkill" EntitySet="UserSkill" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

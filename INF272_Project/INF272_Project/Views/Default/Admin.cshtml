@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+}
+
+<h2>Admin</h2>
+
+<label>Employee ID:</label>
+<input type="text" />
+<br />
+<label>Password:</label>
+<input type="text" />
+<br />
+<input type="button"
+       value="Login"
+       onclick="location.href='@Url.Action("ControlPage", "Default")'" />
+
+<input type="button"
+       value="Go back"
+       onclick="location.href='@Url.Action("Index", "Default")'" />

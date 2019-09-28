@@ -1,0 +1,56 @@
+﻿@model INF272_Project.Models.HelpUser
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>HelpUser</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HelpUserDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HelpUserDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AppUser.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppUser.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Disaster.ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Disaster.ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Help.Help1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Help.Help1)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

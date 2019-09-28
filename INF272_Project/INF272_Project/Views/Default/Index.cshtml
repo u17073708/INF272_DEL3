@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<h1>Home Page</h1>
+    
+    <div>
+        <h1>Disaster relief</h1>
+        <br />
+        <h3>Helping Save Lives</h3>
+        <br />
+        <input type="button"
+               value="Create User"
+           onclick="location.href='@Url.Action("Create", "AppUsers")'" />
+
+        <input type="button"
+               value="Login"
+               onclick="location.href='@Url.Action("Login", "Default")'" />
+       
+    </div>
+   
+

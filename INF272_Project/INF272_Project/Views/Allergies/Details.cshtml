@@ -1,0 +1,42 @@
+﻿@model INF272_Project.Models.Allergy
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Allergy</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Allergy1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Allergy1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AllergyDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllergyDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Remedy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Remedy)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

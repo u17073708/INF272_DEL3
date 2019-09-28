@@ -1,0 +1,42 @@
+﻿@model INF272_Project.Models.Disability
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Disability</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Disability1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Disability1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DisabilityDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DisabilityDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Remedies)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Remedies)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

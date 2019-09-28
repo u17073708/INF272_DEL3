@@ -1,0 +1,76 @@
+﻿@model IEnumerable<INF272_Project.Models.AppUser>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Users</h2>
+
+<p>
+    @Html.ActionLink("Create New User", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmergencyContactID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Surname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmergencyContactID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            <input type="button"
+                   value="Allergy"
+                   onclick="location.href='@Url.Action("Index", "AllergyUsers")'" /> |
+            <input type="button"
+                   value="Disabilities"
+                   onclick="location.href='@Url.Action("Index", "DisabilityUsers")'" /> |
+            <input type="button"
+                   value="Emergency Contacts"
+                   onclick="location.href='@Url.Action("Index", "EmergencyContacts")'" /> |
+            <input type="button"
+                   value="Skills"
+                   onclick="location.href='@Url.Action("Index", "UserSkills")'" /> 
+
+        </td>
+    </tr>
+}
+
+</table>
