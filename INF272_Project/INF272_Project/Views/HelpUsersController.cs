@@ -105,7 +105,7 @@ namespace INF272_Project.Views
         // GET: HelpUsers/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
+            if (id == null) // edit
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
