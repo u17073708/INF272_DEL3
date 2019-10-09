@@ -35,3 +35,40 @@ C:\Users\Hansen\Desktop\272_ProjectFolder\Visual Studios\INF272_Project\INF272_P
 C:\Users\Hansen\Desktop\272_ProjectFolder\Visual Studios\INF272_Project\INF272_Project\obj\Debug\INF272_Project.csprojResolveAssemblyReference.cache
 C:\Users\Hansen\Desktop\272_ProjectFolder\Visual Studios\INF272_Project\INF272_Project\obj\Debug\INF272_Project.dll
 C:\Users\Hansen\Desktop\272_ProjectFolder\Visual Studios\INF272_Project\INF272_Project\obj\Debug\INF272_Project.pdb
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\roslyn\csc.exe
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\roslyn\vbc.exe
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\roslyn\VBCSCompiler.exe
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\INF272_Project.dll.config
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\INF272_Project.dll
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\INF272_Project.pdb
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\EntityFramework.dll
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\EntityFramework.SqlServer.dll
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\System.Web.Helpers.dll
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\System.Web.Mvc.dll
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\System.Web.Razor.dll
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\System.Web.Webpages.dll
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\System.Web.Webpages.Razor.dll
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\EntityFramework.xml
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\EntityFramework.SqlServer.xml
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\System.Web.Razor.xml
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\System.Web.Webpages.xml
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\System.Web.Webpages.Razor.xml
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\System.Web.Helpers.xml
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\bin\System.Web.Mvc.xml
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\obj\Debug\INF272_Project.csprojResolveAssemblyReference.cache
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\obj\Debug\INF272_Project.dll
+C:\Users\Hansen\Desktop\GIT_FOLDER\INF272_DEL3\INF272_Project\INF272_Project\obj\Debug\INF272_Project.pdb
