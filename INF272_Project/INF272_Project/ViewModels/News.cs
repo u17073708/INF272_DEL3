@@ -7,5 +7,6 @@ namespace INF272_Project.ViewModels
 {
     public class News
     {
+        
     }
 }
