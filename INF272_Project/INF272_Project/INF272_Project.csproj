@@ -297,6 +297,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\GetHelpVM.cs" />
+    <Compile Include="ViewModels\GiveHelpVM.cs" />
     <Compile Include="ViewModels\News.cs" />
     <Compile Include="ViewModels\Province.cs" />
     <Compile Include="Views\AllergiesController.cs" />
