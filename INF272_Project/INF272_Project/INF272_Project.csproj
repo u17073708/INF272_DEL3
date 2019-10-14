@@ -297,12 +297,14 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\GetHelpVM.cs" />
+    <Compile Include="ViewModels\GiveHelpVM.cs" />
     <Compile Include="ViewModels\News.cs" />
     <Compile Include="ViewModels\Province.cs" />
     <Compile Include="Views\AllergiesController.cs" />
     <Compile Include="Views\AllergyUsersController.cs" />
     <Compile Include="Views\AppUsersController.cs" />
     <Compile Include="Views\CitiesController.cs" />
+    <Compile Include="Views\CreateDisasterController.cs" />
     <Compile Include="Views\DisabilitiesController.cs" />
     <Compile Include="Views\DisabilityUsersController.cs" />
     <Compile Include="Views\DisastersController.cs" />
@@ -311,8 +313,11 @@
     <Compile Include="Views\EmergencyContactsController.cs" />
     <Compile Include="Views\EmergencyContactUsersController.cs" />
     <Compile Include="Views\EmergencyServicesController.cs" />
+    <Compile Include="Views\GetHelpController.cs" />
+    <Compile Include="Views\GiveHelpController.cs" />
     <Compile Include="Views\HelpsController.cs" />
     <Compile Include="Views\HelpUsersController.cs" />
+    <Compile Include="Views\MainPageController.cs" />
     <Compile Include="Views\ProvincesController.cs" />
     <Compile Include="Views\SafeLocationsController.cs" />
     <Compile Include="Views\SkillsController.cs" />
@@ -342,7 +347,10 @@
     <Content Include="Views\Default\News.cshtml" />
     <Content Include="Views\Default\Admin.cshtml" />
     <Content Include="Views\Default\ControlPage.cshtml" />
-    <Content Include="Views\GetHelp.cshtml" />
+    <Content Include="Views\MainPage\Index.cshtml" />
+    <Content Include="Views\GiveHelp\Index.cshtml" />
+    <Content Include="Views\GetHelp\Index.cshtml" />
+    <Content Include="Views\CreateDisaster\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

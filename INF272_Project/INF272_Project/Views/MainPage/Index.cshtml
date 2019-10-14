@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>This will be where the main page goes</h2>
+<input type="button"
+       value="GiveHelp"
+       onclick="location.href='@Url.Action("Index", "GiveHelp")'" />
+<input type="button"
+       value="GetHelp"
+       onclick="location.href='@Url.Action("Index", "GetHelp")'" />
+<input type="button"
+       value="Create Disaster"
+       onclick="location.href='@Url.Action("Index", "CreateDisaster")'" />
+
