@@ -8,9 +8,9 @@
 <h4> Welcome: John Doe</h4>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Request to create disaster", "Request")
 </p>
-<table class="table">
+<table class="table" border="1">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.DisasterDate)
@@ -48,15 +48,16 @@
             @Html.DisplayFor(modelItem => item.DisasterType.Name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID }) |*@
             <input type="button"
-                   value="Need Help"
-                   onclick="location.href='@Url.Action("Index", "DisasterUsers")'" /> |
+                   value="Give Help"
+                   onclick="location.href='@Url.Action("Index", "GiveHelp")'" />
+            OR
             <input type="button"
-                   value="Help"
-                   onclick="location.href='@Url.Action("Index", "HelpUsers")'" />
+                   value="Get Help"
+                   onclick="location.href='@Url.Action("Index", "GetHelp")'" />
         </td>
     </tr>
 }

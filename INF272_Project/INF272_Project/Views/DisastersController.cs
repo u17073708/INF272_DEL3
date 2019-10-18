@@ -14,8 +14,18 @@ namespace INF272_Project.Views
     {
         private Entities db = new Entities();
 
+        public ActionResult Request()
+        {
+            return View("Request");
+        }
         // GET: Disasters
         public ActionResult Index()
+        {
+            var disasters = db.Disasters.Include(d => d.City).Include(d => d.DisasterType);
+            return View(disasters.ToList());
+        }
+
+        public ActionResult Index2()
         {
             var disasters = db.Disasters.Include(d => d.City).Include(d => d.DisasterType);
             return View(disasters.ToList());
@@ -55,7 +65,7 @@ namespace INF272_Project.Views
             {
                 db.Disasters.Add(disaster);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index2");
             }
 
             ViewBag.CityID = new SelectList(db.Cities, "ID", "Name", disaster.CityID);
@@ -91,7 +101,7 @@ namespace INF272_Project.Views
             {
                 db.Entry(disaster).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index2");
             }
             ViewBag.CityID = new SelectList(db.Cities, "ID", "Name", disaster.CityID);
             ViewBag.DisasterID = new SelectList(db.DisasterTypes, "ID", "Name", disaster.DisasterID);
@@ -121,7 +131,7 @@ namespace INF272_Project.Views
             Disaster disaster = db.Disasters.Find(id);
             db.Disasters.Remove(disaster);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index2");
         }
 
         protected override void Dispose(bool disposing)
