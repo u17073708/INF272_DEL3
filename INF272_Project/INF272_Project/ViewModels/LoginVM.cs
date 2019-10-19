@@ -5,7 +5,7 @@ using System.Web;
 
 namespace INF272_Project.ViewModels
 {
-    public class RequestDisasterVM
+    public class LoginVM
     {
     }
 }

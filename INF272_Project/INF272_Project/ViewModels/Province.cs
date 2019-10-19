@@ -5,8 +5,7 @@ using System.Web;
 
 namespace INF272_Project.ViewModels
 {
-    public class NewsVM
+    public class Province
     {
-        
     }
 }
