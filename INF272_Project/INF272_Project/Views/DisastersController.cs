@@ -14,8 +14,10 @@ namespace INF272_Project.Views
     {
         private Entities db = new Entities();
 
+
         public ActionResult Request()
         {
+
             return View("Request");
         }
         // GET: Disasters
