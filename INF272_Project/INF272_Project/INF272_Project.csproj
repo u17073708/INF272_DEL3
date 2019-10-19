@@ -353,6 +353,7 @@
     <Content Include="Views\CreateDisaster\Index.cshtml" />
     <Content Include="Views\Disasters\Index2.cshtml" />
     <Content Include="Views\Disasters\Request.cshtml" />
+    <Content Include="Views\Disasters\GetHelp.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

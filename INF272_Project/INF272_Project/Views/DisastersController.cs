@@ -13,7 +13,10 @@ namespace INF272_Project.Views
     public class DisastersController : Controller
     {
         private Entities db = new Entities();
-
+        public ActionResult GetHelp()
+        {
+            return View();
+        }
         public ActionResult Request()
         {
             return View("Request");
