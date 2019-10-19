@@ -15,6 +15,7 @@ namespace INF272_Project.Views
         private Entities db = new Entities();
 
         // GET: Disasters
+      
         public ActionResult Index()
         {
             var disasters = db.Disasters.Include(d => d.City).Include(d => d.DisasterType);
