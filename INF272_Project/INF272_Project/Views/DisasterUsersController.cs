@@ -22,13 +22,14 @@ namespace INF272_Project.Views
         }
 
         // GET: DisasterUsers/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int? id, int? id2)
         {
-            if (id == null)
+            if (id == null || id2==null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DisasterUser disasterUser = db.DisasterUsers.Find(id);
+            //CODE MODIFIED HERE
+            DisasterUser disasterUser = db.DisasterUsers.Find(id2,id);
             if (disasterUser == null)
             {
                 return HttpNotFound();
@@ -64,13 +65,13 @@ namespace INF272_Project.Views
         }
 
         // GET: DisasterUsers/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? id, int? id2)
         {
-            if (id == null)
+            if (id == null||id2==null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DisasterUser disasterUser = db.DisasterUsers.Find(id);
+            DisasterUser disasterUser = db.DisasterUsers.Find(id2,id);
             if (disasterUser == null)
             {
                 return HttpNotFound();
@@ -99,13 +100,13 @@ namespace INF272_Project.Views
         }
 
         // GET: DisasterUsers/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int? id,int? id2)
         {
-            if (id == null)
+            if (id == null||id2==null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DisasterUser disasterUser = db.DisasterUsers.Find(id);
+            DisasterUser disasterUser = db.DisasterUsers.Find(id2,id);
             if (disasterUser == null)
             {
                 return HttpNotFound();
@@ -116,9 +117,9 @@ namespace INF272_Project.Views
         // POST: DisasterUsers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int id, int id2)
         {
-            DisasterUser disasterUser = db.DisasterUsers.Find(id);
+            DisasterUser disasterUser = db.DisasterUsers.Find(id2, id);
             db.DisasterUsers.Remove(disasterUser);
             db.SaveChanges();
             return RedirectToAction("Index");

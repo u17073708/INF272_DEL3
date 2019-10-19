@@ -12,15 +12,13 @@ namespace INF272_Project.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class DisasterUser
+    public partial class Employee
     {
-        public int DisasterID { get; set; }
-        public int UserID { get; set; }
-        public Nullable<System.DateTime> DisasterUserDate { get; set; }
-        public string Urgency { get; set; }
-        public int UserDisasterID { get; set; }
-    
-        public virtual AppUser AppUser { get; set; }
-        public virtual Disaster Disaster { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string Email { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
     }
 }

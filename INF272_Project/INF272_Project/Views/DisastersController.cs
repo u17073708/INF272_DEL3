@@ -23,7 +23,7 @@ namespace INF272_Project.Views
         {
             if (btnSubmit == "Submit")
             {
-                if (type == "" || city == "" || destruction == "" || severity == "" || email == "")
+                if (type == "" || city == "" || destruction == "" || severity == "")
                 {
                     ViewBag.Success = "Please complete all fields";
                     return View("Request");

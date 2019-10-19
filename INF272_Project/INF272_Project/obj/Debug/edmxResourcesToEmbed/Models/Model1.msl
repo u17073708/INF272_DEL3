@@ -92,6 +92,7 @@
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="DisasterUserDate" ColumnName="DisasterUserDate" />
           <ScalarProperty Name="Urgency" ColumnName="Urgency" />
+          <ScalarProperty Name="UserDisasterID" ColumnName="UserDisasterID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -188,6 +189,18 @@
           <ScalarProperty Name="SkillID" ColumnName="SkillID" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="ExperienceLevel" ColumnName="ExperienceLevel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="Model.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
