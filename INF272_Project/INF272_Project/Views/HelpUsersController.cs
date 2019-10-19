@@ -28,7 +28,7 @@ namespace INF272_Project.Views
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HelpUser helpUser = db.HelpUsers.Find(id,id2);
+            HelpUser helpUser = db.HelpUsers.Find(id2,id);
             if (helpUser == null)
             {
                 return HttpNotFound();
@@ -72,7 +72,7 @@ namespace INF272_Project.Views
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HelpUser helpUser = db.HelpUsers.Find(id,id2);
+            HelpUser helpUser = db.HelpUsers.Find(id2,id);
             if (helpUser == null)
             {
                 return HttpNotFound();
@@ -109,7 +109,7 @@ namespace INF272_Project.Views
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HelpUser helpUser = db.HelpUsers.Find(id,id2);
+            HelpUser helpUser = db.HelpUsers.Find(id2,id);
             if (helpUser == null)
             {
                 return HttpNotFound();
@@ -122,7 +122,7 @@ namespace INF272_Project.Views
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id, int id2)
         {
-            HelpUser helpUser = db.HelpUsers.Find(id, id2);
+            HelpUser helpUser = db.HelpUsers.Find(id2, id);
             db.HelpUsers.Remove(helpUser);
             db.SaveChanges();
             return RedirectToAction("Index");
