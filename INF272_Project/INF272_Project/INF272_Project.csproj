@@ -299,7 +299,6 @@
     <Compile Include="ViewModels\GetHelpVM.cs" />
     <Compile Include="ViewModels\GiveHelpVM.cs" />
     <Compile Include="ViewModels\News.cs" />
-    <Compile Include="ViewModels\Province.cs" />
     <Compile Include="Views\AllergiesController.cs" />
     <Compile Include="Views\AllergyUsersController.cs" />
     <Compile Include="Views\AppUsersController.cs" />
