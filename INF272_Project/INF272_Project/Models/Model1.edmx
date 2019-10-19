@@ -92,6 +92,7 @@
           <Property Name="UserID" Type="int" Nullable="false" />
           <Property Name="DisasterUserDate" Type="datetime" />
           <Property Name="Urgency" Type="varchar" MaxLength="50" />
+          <Property Name="UserDisasterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="EmergencyContact">
           <Key>
@@ -118,6 +119,19 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" />
           <Property Name="Number" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DisasterDB(new).dbo.Employee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+          <Property Name="Surname" Type="nchar" MaxLength="10" />
+          <Property Name="Email" Type="nchar" MaxLength="10" />
+          <Property Name="Username" Type="nchar" MaxLength="10" />
+          <Property Name="Password" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Help">
           <Key>
@@ -406,6 +420,16 @@
           <EntitySet Name="Skill" EntityType="Self.Skill" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserSkill" EntityType="Self.UserSkill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Employee].[ID] AS [ID], 
+    [Employee].[Name] AS [Name], 
+    [Employee].[Surname] AS [Surname], 
+    [Employee].[Email] AS [Email], 
+    [Employee].[Username] AS [Username], 
+    [Employee].[Password] AS [Password]
+    FROM [dbo].[Employee] AS [Employee]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK__City__ProvinceID__4AB81AF0" Association="Self.FK__City__ProvinceID__4AB81AF0">
             <End Role="Province" EntitySet="Province" />
             <End Role="City" EntitySet="City" />
@@ -587,6 +611,7 @@
           <Property Name="UserID" Type="Int32" Nullable="false" />
           <Property Name="DisasterUserDate" Type="DateTime" Precision="3" />
           <Property Name="Urgency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserDisasterID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="AppUser" Relationship="Self.FK_disasterUserID" FromRole="DisasterUser" ToRole="AppUser" />
           <NavigationProperty Name="Disaster" Relationship="Self.FK_disasterID" FromRole="DisasterUser" ToRole="Disaster" />
         </EntityType>
@@ -690,6 +715,17 @@
           <Property Name="ExperienceLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="AppUser" Relationship="Self.FK_userID" FromRole="UserSkill" ToRole="AppUser" />
           <NavigationProperty Name="Skill" Relationship="Self.FK_skillID" FromRole="UserSkill" ToRole="Skill" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Username" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
         <Association Name="FK_allergyID">
           <End Role="Allergy" Type="Self.Allergy" Multiplicity="1" />
@@ -915,6 +951,7 @@
           <EntitySet Name="Skills" EntityType="Self.Skill" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="UserSkills" EntityType="Self.UserSkill" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
           <AssociationSet Name="FK_allergyID" Association="Self.FK_allergyID">
             <End Role="Allergy" EntitySet="Allergies" />
             <End Role="AllergyUser" EntitySet="AllergyUsers" />
@@ -1081,6 +1118,7 @@
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="DisasterUserDate" ColumnName="DisasterUserDate" />
                 <ScalarProperty Name="Urgency" ColumnName="Urgency" />
+                <ScalarProperty Name="UserDisasterID" ColumnName="UserDisasterID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1177,6 +1215,18 @@
                 <ScalarProperty Name="SkillID" ColumnName="SkillID" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="ExperienceLevel" ColumnName="ExperienceLevel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="Model.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -87,6 +87,7 @@
     <Property Name="UserID" Type="int" Nullable="false" />
     <Property Name="DisasterUserDate" Type="datetime" />
     <Property Name="Urgency" Type="varchar" MaxLength="50" />
+    <Property Name="UserDisasterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <EntityType Name="EmergencyContact">
     <Key>
@@ -113,6 +114,19 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="varchar" MaxLength="50" />
     <Property Name="Number" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DisasterDB(new).dbo.Employee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="10" />
+    <Property Name="Surname" Type="nchar" MaxLength="10" />
+    <Property Name="Email" Type="nchar" MaxLength="10" />
+    <Property Name="Username" Type="nchar" MaxLength="10" />
+    <Property Name="Password" Type="nchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="Help">
     <Key>
@@ -401,6 +415,16 @@
     <EntitySet Name="Skill" EntityType="Self.Skill" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserSkill" EntityType="Self.UserSkill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Employee].[ID] AS [ID], 
+    [Employee].[Name] AS [Name], 
+    [Employee].[Surname] AS [Surname], 
+    [Employee].[Email] AS [Email], 
+    [Employee].[Username] AS [Username], 
+    [Employee].[Password] AS [Password]
+    FROM [dbo].[Employee] AS [Employee]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK__City__ProvinceID__4AB81AF0" Association="Self.FK__City__ProvinceID__4AB81AF0">
       <End Role="Province" EntitySet="Province" />
       <End Role="City" EntitySet="City" />

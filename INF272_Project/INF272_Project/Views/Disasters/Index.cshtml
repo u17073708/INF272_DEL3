@@ -53,11 +53,11 @@
             @Html.ActionLink("Delete", "Delete", new { id=item.ID }) |*@
             <input type="button"
                    value="Give Help"
-                   onclick="location.href='@Url.Action("Index", "GiveHelp")'" />
+                   onclick="location.href='@Url.Action("Index", "DisasterUsers")'" />
             OR
             <input type="button"
                    value="Get Help"
-                   onclick="location.href='@Url.Action("Index", "GetHelp")'" />
+                   onclick="location.href='@Url.Action("Index", "HelpUsers")'" />
         </td>
     </tr>
 }

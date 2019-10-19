@@ -7,5 +7,10 @@ namespace INF272_Project.ViewModels
 {
     public class GetHelpVM
     {
+
+        //string HelpRequired;
+        //string Description;
+        //string Urgency;
+
     }
 }

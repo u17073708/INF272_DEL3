@@ -44,5 +44,6 @@ namespace INF272_Project.Models
         public virtual DbSet<Skill> Skills { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<UserSkill> UserSkills { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
     }
 }

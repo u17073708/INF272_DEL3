@@ -107,6 +107,7 @@
     <Property Name="UserID" Type="Int32" Nullable="false" />
     <Property Name="DisasterUserDate" Type="DateTime" Precision="3" />
     <Property Name="Urgency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserDisasterID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <NavigationProperty Name="AppUser" Relationship="Self.FK_disasterUserID" FromRole="DisasterUser" ToRole="AppUser" />
     <NavigationProperty Name="Disaster" Relationship="Self.FK_disasterID" FromRole="DisasterUser" ToRole="Disaster" />
   </EntityType>
@@ -210,6 +211,17 @@
     <Property Name="ExperienceLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="AppUser" Relationship="Self.FK_userID" FromRole="UserSkill" ToRole="AppUser" />
     <NavigationProperty Name="Skill" Relationship="Self.FK_skillID" FromRole="UserSkill" ToRole="Skill" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Surname" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Username" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
   </EntityType>
   <Association Name="FK_allergyID">
     <End Role="Allergy" Type="Self.Allergy" Multiplicity="1" />
@@ -435,6 +447,7 @@
     <EntitySet Name="Skills" EntityType="Self.Skill" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="UserSkills" EntityType="Self.UserSkill" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
     <AssociationSet Name="FK_allergyID" Association="Self.FK_allergyID">
       <End Role="Allergy" EntitySet="Allergies" />
       <End Role="AllergyUser" EntitySet="AllergyUsers" />

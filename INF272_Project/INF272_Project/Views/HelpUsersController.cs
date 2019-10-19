@@ -22,13 +22,13 @@ namespace INF272_Project.Views
         }
 
         // GET: HelpUsers/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int? id, int? id2)
         {
-            if (id == null)
+            if (id == null||id2==null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HelpUser helpUser = db.HelpUsers.Find(id);
+            HelpUser helpUser = db.HelpUsers.Find(id,id2);
             if (helpUser == null)
             {
                 return HttpNotFound();
@@ -66,13 +66,13 @@ namespace INF272_Project.Views
         }
 
         // GET: HelpUsers/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? id, int? id2)
         {
-            if (id == null)
+            if (id == null||id2==null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HelpUser helpUser = db.HelpUsers.Find(id);
+            HelpUser helpUser = db.HelpUsers.Find(id,id2);
             if (helpUser == null)
             {
                 return HttpNotFound();
@@ -103,13 +103,13 @@ namespace INF272_Project.Views
         }
 
         // GET: HelpUsers/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int? id, int? id2)
         {
-            if (id == null) // edit
+            if (id == null||id2==null) // edit
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HelpUser helpUser = db.HelpUsers.Find(id);
+            HelpUser helpUser = db.HelpUsers.Find(id,id2);
             if (helpUser == null)
             {
                 return HttpNotFound();
@@ -120,9 +120,9 @@ namespace INF272_Project.Views
         // POST: HelpUsers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int id, int id2)
         {
-            HelpUser helpUser = db.HelpUsers.Find(id);
+            HelpUser helpUser = db.HelpUsers.Find(id, id2);
             db.HelpUsers.Remove(helpUser);
             db.SaveChanges();
             return RedirectToAction("Index");
