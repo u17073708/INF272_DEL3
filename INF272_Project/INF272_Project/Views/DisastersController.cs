@@ -125,6 +125,11 @@ namespace INF272_Project.Views
             return View(disaster);
         }
 
+        public ActionResult GiveHelp()
+        {
+            return View();
+        }
+
         // POST: Disasters/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -144,5 +149,6 @@ namespace INF272_Project.Views
             }
             base.Dispose(disposing);
         }
+
     }
 }
