@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "GetHelp";
+}
+
+<h2>GetHelp</h2>
+
+
+@using (Html.BeginForm())
+{
+<div class=" form-group">
+    @Html.DropDownListFor(m => m.Urgency,
+                     new SelectList(Enum.GetValues(typeof(Urgency))),
+                     "Select Gender"))
+</div>
+}
+
+
+
