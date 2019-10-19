@@ -3,11 +3,55 @@
     ViewBag.Title = "Request";
 }
 
-<h2>Request to create a new disaster</h2>
-<p>You can request to create a new disaster and our administrator will aprrove it once its been verified</p>
+<h5>@ViewBag.Success</h5>
+
+
+@using (Html.BeginForm("Request", "Disasters"))
+{
+    
+        <h2 style="text-decoration: underline;">Request to create a new disaster</h2>
+        <p>You can request to create a new disaster and our administrator will add it to our app once its been verified</p>
+        <br />
+        <div class="content">
+            <div class="labels">
+                <label>Disaster Type:</label>
+                <br />
+                <input id="txtType" name="type" type="text" />
+                <br />
+                <br />
+                <label>City:</label>
+                <br />
+                <input id="txtCity" name="city" type="text" />
+                <br />
+                <br />
+                <label>Destruction:</label>
+                <br />
+                <input id="txtDestruction" name="destruction" type="text" />
+                <br />
+                <br />
+                <label>Severity:</label>
+                <br />
+                <input id="txtSeverity" name="severity" type="text" />
+                <br />
+                <br />
+                <label>Email address:(In this case we'll use Hansen's TUKs one to test)</label>
+                <br />
+                <input id="txtEmail" name="email" type="text" />
+            </div>
+         
+            <br />
+            <br />
+        </div>
+        <input id="btnSubmit" name="btnSubmit" type="submit" value="Submit" />
+   
+}
+
 
 <input type="button"
        value="Go Back"
        onclick="location.href='@Url.Action("Index", "Disasters")'" />
+
+
+
 
 
