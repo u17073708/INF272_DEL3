@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using INF272_Project.Models;
+using System.Net.Mail;
+
 
 namespace INF272_Project.Views
 {
@@ -14,9 +16,53 @@ namespace INF272_Project.Views
     {
         private Entities db = new Entities();
 
-        public ActionResult Request()
+
+
+        public ActionResult Request(string type, string city, string destruction, string severity, string btnSubmit, string email)
+
         {
-            return View("Request");
+            if (btnSubmit == "Submit")
+            {
+                if (type == "" || city == "" || destruction == "" || severity == "" || email == "")
+                {
+                    ViewBag.Success = "Please complete all fields";
+                    return View("Request");
+                }
+                else
+                {
+                    ViewBag.Success = "Email sent! Feel free to submit another disaster.";
+                    var senderEmail = new MailAddress("u17073708@tuks.co.za"); //your email goes here
+                    var receiverEmail = new MailAddress("hansentheasian@gmail.com", "Administrator");
+                    var password = "Dragonoid3316_"; //your email password goes here
+                    var sub = "Create new disaster";
+                    var body = "Good day admin, a new disaster has been requested to be created with the following details:" + "\n" + "Type of disaster:" + type + "\n" + "City:" + city + "\n" + "Destruction:" + destruction + "\n" + "Severity:" + severity;
+                    var smtp = new SmtpClient
+                    {
+                        Host = "smtp.gmail.com", //this might change accordingly
+                        Port = 587,
+                        EnableSsl = true,
+                        DeliveryMethod = SmtpDeliveryMethod.Network,
+                        UseDefaultCredentials = false,
+                        Credentials = new NetworkCredential(senderEmail.Address, password)
+                    };
+                    using (var mess = new MailMessage(senderEmail, receiverEmail)
+                    {
+                        Subject = sub,
+                        Body = body
+                    })
+                    {
+                        smtp.Send(mess);
+                    }
+
+                    return View("Request");
+
+                }
+            }
+            else
+            {
+                return View("Request");
+            }
+          
         }
         // GET: Disasters
         public ActionResult Index()
