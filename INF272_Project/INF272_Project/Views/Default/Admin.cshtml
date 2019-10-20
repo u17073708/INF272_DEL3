@@ -1,19 +1,22 @@
-﻿
+﻿@using INF272_Project.ViewModels
+
 @{
     ViewBag.Title = "Admin";
 }
 
 <h2>Admin</h2>
 
-<label>Employee ID:</label>
-<input type="text" />
-<br />
-<label>Password:</label>
-<input type="text" />
-<br />
-<input type="button"
-       value="Login"
-       onclick="location.href='@Url.Action("ControlPage", "Default")'" />
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm("Login", "MainPage", FormMethod.Post))
+        {
+            <h2>Login</h2>
+            <input type="text" name="Username" placeholder="Username" />
+            <input type="password" name="Password" placeholder="Password" />
+            <input type="submit" value="Login" />
+        }
+    </div>
+</div>
 
 <input type="button"
        value="Go back"

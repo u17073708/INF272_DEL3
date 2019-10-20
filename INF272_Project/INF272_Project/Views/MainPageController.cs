@@ -3,16 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using INF272_Project.ViewModels;
 
 namespace INF272_Project.Views
 {
     public class MainPageController : Controller
     {
+        
         // GET: MainPage
         public ActionResult Index()
         {
             return View();
         }
+
+        public ActionResult GetInputDetails()
+        {
+
+        }
+        [HttpPost]
+        public ActionResult Login (string Username, string Password)
+        {
+            
+        }
+
         //public ActionResult GetHelp()
         //{
         //    return View("~/Views/Default/GetHelp.cshtml");
