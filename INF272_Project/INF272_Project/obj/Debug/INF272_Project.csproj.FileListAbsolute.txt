@@ -1,4 +1,0 @@
-C:\Users\Gareth\Desktop\Varsity\inf 272\INF272_DEL3\INF272_Project\INF272_Project\obj\Debug\INF272_Project.csprojAssemblyReference.cache
-C:\Users\Gareth\Desktop\Varsity\inf 272\INF272_DEL3\INF272_Project\INF272_Project\obj\Debug\INF272_Project.csproj.CoreCompileInputs.cache
-C:\Users\Gareth\Desktop\Varsity\inf 272\INF272_DEL3\INF272_Project\INF272_Project\obj\Debug\INF272_Project.dll
-C:\Users\Gareth\Desktop\Varsity\inf 272\INF272_DEL3\INF272_Project\INF272_Project\obj\Debug\INF272_Project.pdb
