@@ -14,25 +14,11 @@ namespace INF272_Project.Models
     
     public partial class Disaster
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Disaster()
-        {
-            this.HelpUsers = new HashSet<HelpUser>();
-            this.DisasterUsers = new HashSet<DisasterUser>();
-        }
-    
         public int ID { get; set; }
         public Nullable<System.DateTime> DisasterDate { get; set; }
         public Nullable<int> DamageLevel { get; set; }
         public Nullable<int> Casualties { get; set; }
         public Nullable<int> DisasterID { get; set; }
         public Nullable<int> CityID { get; set; }
-    
-        public virtual City City { get; set; }
-        public virtual DisasterType DisasterType { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HelpUser> HelpUsers { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DisasterUser> DisasterUsers { get; set; }
     }
 }
