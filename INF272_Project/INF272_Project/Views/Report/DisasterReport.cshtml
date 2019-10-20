@@ -1,0 +1,23 @@
+﻿@model INF272_Project.ViewModels.DisasterReportVM
+@using INF272_Project.ViewModels
+
+@{
+    ViewBag.Title = "DisasterReport";
+}
+
+<h2>DisasterReport</h2>
+
+<div class="criteria">
+
+    @using (Html.BeginForm("DisasterReport", "Report", FormMethod.Post))
+    {
+        <label>From</label>
+        @Html.TextBoxFor(m => m.DateFrom, "yyyy-MM-dd", new { @Value = "2019-01-01", @type = "date", @class = "form-control" })
+        <label>To</label>
+        @Html.TextBoxFor(m => m.DateTo, "yyyy-MM-dd", new { @Value = "2019-02-30", @type = "date", @class = "form-control" })
+        <br />
+        <input type="submit" value="Generate" class="btn btn-primary" />
+    }
+</div>
+
+
