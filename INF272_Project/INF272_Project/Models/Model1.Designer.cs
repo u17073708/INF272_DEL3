@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Gareth\Desktop\Varsity\inf 272\INF272_DEL3\INF272_Project\INF272_Project\Models\Model.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Hansen\Desktop\272_ProjectFolder\Visual Studios\INF272_Project\INF272_Project\Models\Model1.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

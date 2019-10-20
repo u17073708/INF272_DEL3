@@ -12,27 +12,26 @@ namespace INF272_Project.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Disaster
+    public partial class City
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Disaster()
+        public City()
         {
-            this.HelpUsers = new HashSet<HelpUser>();
-            this.DisasterUsers = new HashSet<DisasterUser>();
+            this.Disasters = new HashSet<Disaster>();
+            this.SafeLocations = new HashSet<SafeLocation>();
         }
     
         public int ID { get; set; }
-        public Nullable<System.DateTime> DisasterDate { get; set; }
-        public Nullable<int> DamageLevel { get; set; }
-        public Nullable<int> Casualties { get; set; }
-        public Nullable<int> DisasterID { get; set; }
-        public Nullable<int> CityID { get; set; }
+        public string Name { get; set; }
+        public string Population { get; set; }
+        public Nullable<int> Size { get; set; }
+        public Nullable<int> Risk { get; set; }
+        public Nullable<int> ProvinceID { get; set; }
     
-        public virtual City City { get; set; }
-        public virtual DisasterType DisasterType { get; set; }
+        public virtual Province Province { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HelpUser> HelpUsers { get; set; }
+        public virtual ICollection<Disaster> Disasters { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DisasterUser> DisasterUsers { get; set; }
+        public virtual ICollection<SafeLocation> SafeLocations { get; set; }
     }
 }
