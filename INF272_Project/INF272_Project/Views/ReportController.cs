@@ -45,7 +45,7 @@ namespace INF272_Project.Views
 
 
 
-                List<Disaster> disasters = db.Disasters.ToList();
+                 0                     List<Disaster> disasters = db.Disasters.ToList();
 
                 
 
