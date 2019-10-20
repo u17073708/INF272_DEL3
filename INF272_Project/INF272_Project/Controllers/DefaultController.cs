@@ -25,6 +25,7 @@ namespace INF272_Project.Controllers
         }
         public ActionResult News()
         {
+
             return View("~/Views/Default/News.cshtml");
         }
         public ActionResult Admin()
