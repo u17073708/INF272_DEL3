@@ -4,9 +4,9 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Success!</h2>
 
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
@@ -48,4 +48,8 @@
     </tr>
 }
 
-</table>
+</table>*@
+
+<input type="button"
+       value="Go Back"
+       onclick="location.href='@Url.Action("Index", "Disasters")'" />

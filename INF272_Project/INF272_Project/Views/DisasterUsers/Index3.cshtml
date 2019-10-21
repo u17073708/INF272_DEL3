@@ -1,0 +1,54 @@
+﻿@model IEnumerable<INF272_Project.Models.DisasterUser>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Manage disaster users</h2>
+
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DisasterUserDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Urgency)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AppUser.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Disaster.ID)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisasterUserDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Urgency)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppUser.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Disaster.ID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.UserID, id2 = item.DisasterID}) |
+                @Html.ActionLink("Details", "Details", new { id = item.UserID, id2 = item.DisasterID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.UserID, id2 = item.DisasterID })
+            </td>
+        </tr>
+    }
+
+    </table>
+
+<br />
+<input type="button"
+       value="Go back to control page"
+       onclick="location.href='@Url.Action("ControlPage", "Default")'" />

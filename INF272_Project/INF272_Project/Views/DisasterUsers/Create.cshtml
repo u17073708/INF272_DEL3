@@ -5,7 +5,7 @@
 }
 
 <h2>Create</h2>
-
+<h5>@ViewBag.Success</h5>
 
 @using (Html.BeginForm()) 
 {
@@ -55,9 +55,10 @@
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+<br />
+<input type="button"
+       value="Go back"
+       onclick="location.href='@Url.Action("Index", "Disasters")'" />
 
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>

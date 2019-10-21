@@ -357,6 +357,11 @@
     <Content Include="Views\CreateDisaster\Index.cshtml" />
     <Content Include="Views\Disasters\Index2.cshtml" />
     <Content Include="Views\Disasters\Request.cshtml" />
+    <Content Include="Views\DisasterUsers\Index2.cshtml" />
+    <Content Include="Views\DisasterUsers\GiveHelpForms.cshtml" />
+    <Content Include="Views\DisasterUsers\GetHelpForms.cshtml" />
+    <Content Include="Views\DisasterUsers\Success.cshtml" />
+    <Content Include="Views\DisasterUsers\Index3.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

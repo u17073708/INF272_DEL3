@@ -1,0 +1,53 @@
+﻿
+
+@{
+    ViewBag.Title = "GiveHelpForm";
+}
+
+<h5>@ViewBag.Success</h5>
+
+
+@using (Html.BeginForm("GiveHelpForms", "DisasterUsers"))
+{
+
+    <h2 style="text-decoration: underline;">Specify the help you will be giving</h2>
+        <p>Note: Please fill in all details</p>
+        <br />
+        <div class="content">
+            <div class="labels">
+                <label>Your name:</label>
+                <br />
+                <input id="txtType" name="name" type="text" />
+                <br />
+                <br />
+                <label>City where you reside:</label>
+                <br />
+                <input id="txtCity" name="city" type="text" />
+                <br />
+                <br />
+                <label>How many days until you reach the person needing help(in days):</label>
+                <br />
+                <input id="txtDestruction" name="days" type="text" />
+                <br />
+                <br />
+                <label>Short description of how you are going to help:</label>
+                <br />
+                <input id="txtSeverity" name="description" type="text" />
+                <br />
+                <br />
+
+            </div>
+
+            <br />
+            <br />
+        </div>
+        <input id="btnSubmit" name="btnSubmit" type="submit" value="Submit" />
+
+}
+
+
+<input type="button"
+       value="Go Back"
+       onclick="location.href='@Url.Action("Index2", "DisasterUsers")'" />
+
+

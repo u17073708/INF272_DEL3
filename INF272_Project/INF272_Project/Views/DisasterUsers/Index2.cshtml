@@ -1,0 +1,61 @@
+﻿@model IEnumerable<INF272_Project.Models.DisasterUser>
+
+@{
+    ViewBag.Title = "DisasterUsers";
+}
+
+<h2>Disaster Users</h2>
+
+<p>
+    
+</p>
+<table class="table" border="1">
+    <tr>
+        <th>
+            Date the user asked for help
+            @*@Html.DisplayNameFor(model => model.DisasterUserDate)*@
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Urgency)
+        </th>
+        <th>
+            User's Name
+            @*@Html.DisplayNameFor(model => model.AppUser.Name)*@
+        </th>
+        <th>
+            Disaster details
+            @*@Html.DisplayNameFor(model => model.Disaster.DisasterType)*@
+        </th>
+        
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisasterUserDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Urgency)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppUser.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Disaster.DisasterType)
+            </td>
+            
+            <td>
+                <input type="button"
+                       value="Help this user"
+                       onclick="location.href='@Url.Action("GiveHelpForms", "DisasterUsers")'" />
+            </td>
+        </tr>
+    }
+
+</table>
+
+<input type="button"
+       value="Go back to Disasters page"
+       onclick="location.href='@Url.Action("Index", "Disasters")'" />
