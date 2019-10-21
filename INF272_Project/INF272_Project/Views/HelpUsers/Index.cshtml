@@ -41,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.Help.Help1)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.UserID,id2= item.DisasterID}) |
-            @Html.ActionLink("Details", "Details", new { id = item.UserID,id2= item.DisasterID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.UserID, id2=item.DisasterID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.UserID, id2= item.HelpID}) |
+            @Html.ActionLink("Details", "Details", new { id = item.UserID, id2= item.HelpID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.UserID, id2=item.HelpID })
         </td>
     </tr>
 }
