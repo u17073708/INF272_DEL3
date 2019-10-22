@@ -1,0 +1,56 @@
+﻿@model INF272_Project.ViewModels.DisasterReportVM
+@using INF272_Project.ViewModels
+@using System.Globalization
+@using System.Data
+
+@{
+    ViewBag.Title = "DisasterReport";
+}
+
+<h2>DisasterReport</h2>
+
+<div class="criteria">
+
+    @using (Html.BeginForm("DisasterReport", "Reports", FormMethod.Post))
+    {
+        <label>From</label>
+        @Html.TextBoxFor(m => m.DateFrom, "yyyy-MM-dd", new { @Value = "2019-01-01", @type = "date", @class = "form-control" })
+        <label>To</label>
+        @Html.TextBoxFor(m => m.DateTo, "yyyy-MM-dd", new { @Value = "2019-03-30", @type = "date", @class = "form-control" })
+        <br />
+        <input type="submit" value="Generate" class="btn btn-primary" value="generate" />
+    }
+</div>
+
+
+@if (Model.disaster != null)
+{
+    foreach (var group in Model.results)
+    {
+        <h4>Disaster:</h4>
+        <table class="table table-striped">
+            <tr>
+                <th>Name</th>
+                <th>Disaster Date</th>
+                <th>Casualties</th>
+                <th>Damage Level</th>
+                <th>City</th>
+            </tr>
+            @foreach (ReportRecord groupItem in group)
+            {
+                <tr>
+                    <td>@groupItem.Name</td>
+                    <td>@groupItem.DisasterDate</td>
+                    <td>@groupItem.Casualties</td>
+                    <td>@groupItem.DamageLevel</td>
+                    <td>@groupItem.City</td>
+                </tr>
+            }
+        </table>
+    }
+
+    <div>
+        @Html.ActionLink("Export as PDF", "ExportAdvancedPDF", "Home")<br />
+        @Html.ActionLink("Export as Word", "ExportAdvancedWord", "Home")
+    </div>
+}

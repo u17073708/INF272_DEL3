@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using INF272_Project.Models;
+using INF272_Project.ViewModels;
 
 namespace INF272_Project.Controllers
 {
@@ -35,5 +37,8 @@ namespace INF272_Project.Controllers
         {
             return View("~/Views/Default/ControlPage.cshtml");
         }
+
+
+        
     }
 }
